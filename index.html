@@ -1,0 +1,303 @@
+<!doctype html>
+<html>
+<head>
+
+	<title>ISCL</title>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link href="css/main.css" media="screen" rel="stylesheet" type="text/css"/>
+	<link href="css/index.css" media="screen" rel="stylesheet" type="text/css"/>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+	<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			CommonHTML: { linebreaks: { automatic: true } },
+			"HTML-CSS": { linebreaks: { automatic: true } },
+				 SVG: { linebreaks: { automatic: true } }
+			});
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	
+</head>
+
+<body>
+
+<div class="menu-container noselect">
+	<div class="menu">
+		<table class="menu-table">
+			<tr>
+				<td>
+					<div class="logo">
+						<a href="javascript:void(0)">ISCL</a>
+					</div>
+				</td>
+				<td>
+					<div class="menu-items">
+						<a class="menu-highlight">Overview</a>
+						<a href="https://github.com/Lanxin1011/ISCL">GitHub</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<div class="content-container">
+	<div class="content">
+		<table class="content-table">
+		      <h1 style="text-align:center; margin-top:60px; font-weight: bold; font-size: 35px;">
+				Instance Switching-based Contrastive Learning for Fine-grained Airplane Detection </h1>
+	        
+				<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px;">
+					<a href="https://github.com/Lanxin1011" style="color: #0088CC">Lanxin Zeng<script type="math/tex">^1</script>, </a>
+					<a href="https://github.com/whughw" style="color: #0088CC">Haowen Guo<script type="math/tex">^1</script>, </a>
+					<a href="http://www.captain-whu.com/yangwen_En.html" style="color: #0088CC">Wen Yang<script type="math/tex">^{1,*}</script>, </a>
+          <a href="https://github.com/levenberg" style="color: #0088CC">Huai Yu<script type="math/tex">^1</script>,</a>
+          <a href="http://dvs-whu.cn/" style="color: #0088CC">Lei Yu<script type="math/tex">^1</script>,</a> 
+					<a href="https://www.cast.cn/" style="color: #0088CC">Peng Zhang<script type="math/tex">^{2}</script>, </a> 
+					<a href="https://www.cast.cn/" style="color: #0088CC">Tongyuan Zou<script type="math/tex">^{2}</script> </a> <br>
+
+                     
+					<a target="_blank" href="https://dsp.whu.edu.cn/" style="color: #0088CC; font-style: italic"><script type="math/tex">^1</script>EIS SPL, Wuhan University, Wuhan, China</a><br>
+					<a target="_blank" href="https://www.cast.cn/" style="color: #0088CC; font-style: italic"><script type="math/tex">^2</script>503 Institute, China Academy of Space Technology, Beijing, China</a>  <br>
+
+				</p>	 
+				<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px;"> 
+					<a href="https://ieeexplore.ieee.org/document/9933796" style="color: hsl(17, 100%, 40%)"> [Paper]
+					</a>
+					<a href="https://github.com/Lanxin1011/mmdet-ISCL" style="color: hsl(17, 100%, 40%)"> [Data and code]
+					</a>
+				</p>
+		
+			
+			<tr>
+				<!-- <td colspan="1"> -->
+					<h2 class="add-top-margin">Abstract</h2>
+					<hr>
+				<!-- </td> -->
+			</tr>
+			<tr>
+					<!-- <td colspan="1"> -->
+
+				<p class="text" style="text-align:justify;">
+					Detecting airplanes from high-resolution remote sensing images has a variety of applications. The characteristics of clear details, rich spatial, and texture information of objects in high-resolution remote sensing images make it possible to identify different types of airplanes from backgrounds. However, airplanes usually exhibit slight interclass discrepancy and unbalanced class distribution, which pose significant challenges to the fine-grained detection of airplanes. In this article, we propose the ISCL, an instance switching-based contrastive learning method for fine-grained airplane detection. Specifically, we introduce a contrastive learning-based module (CLM) to widen the interclass distance while narrowing the intraclass distance by optimizing feature space distribution with the InfoNCE<sup>+</sup> loss, which is built on a serial head in a cascaded way. Then, we design a refined instance switching (ReIS) module to alleviate the class imbalance problem. To take full advantage of the CLM and ReIS, we further introduce an optimization strategy, which is an organic combination of the two modules to widen the distances of different airplane categories that are easily confused. In addition, we contribute a fine-grained attribute-assisted dataset, dubbed GF-RarePlanes dataset (GRD), to help the detectors better learn the subtle differences between the airplanes. Extensive experiments on two datasets (<i>i.e.</i>, GF and FAIR1M) demonstrate that our proposed method can significantly improve the accuracy of fine-grained airplane detection under both horizontal bounding box (HBB) and oriented bounding box (OBB) scenarios. Dataset and codes will be available at https://lanxin1011.github.io/ISCL/.
+				</p>
+					<!-- </td> -->
+			</tr>
+
+			<tr>
+				<!-- <td colspan="1"> -->
+					<h2 class="add-top-margin">Introduction</h2>
+					<hr>
+				<!-- </td> -->
+			</tr>
+
+			<tr>
+				<p class="text" style="text-align:justify;">
+					detection has attracted attention from a wide range of communities in recent years. As one of the branches of object detection, airplane detection is of great importance to flight monitoring at the airport with high resolution remote sensing images. The characteristics of rich spatial information and clear texture details allow the object detectors to distinguish airplanes from backgrounds in traditional detection tasks. However, as shown in Fig.1-(a), CNN-based detectors still find it hard to accurately classify airplanes in the task of fine-grained airplane detection due to the following issues:
+          <br>
+          <br>
+					<b>Unbalanced Class Distribution.</b> Airplanes of different classes exist at different frequencies in the real world, and thus airplane datasets (i.e., GF and FAIR1M) usually exhibit unbalanced inter-class distribution as shown in Fig.1-(b). A study found that ConvNet would significantly overfit the minor class who has insufficient training instances, resulting in poor detection accuracy. Hence, designing an appropriate augmenting method to improve minor class instance diversity and construct a balanced dataset is non-trivial.
+					<b>Indistinct Inter-class Discrepancy.</b> Similar to the challenge in fine-grained classification, airplanes of different classes exhibit slight inter-class discrepancy as shown in Fig.1-(c). Meanwhile, due to the different coating of the same type of airplanes, the geometric distortion of remote sensing images and other factors, airplanes of the same class appear to have large intra-class difference as well. Thus, CNN-based detectors cannot learn distinguishable features to correctly classify airplanes, which leads to performance degradation on fine-grained detection tasks.
+				</p>
+			</tr>
+
+			<tr>
+				<td>
+					<div>
+					<img class="center" src="./images/fig1.png" width="600" /> <br>
+					<p class="image-caption">
+						Figure 1. (a) Detection results of Faster R-CNN. (b) Sample Distribution of the training set in GF and FAIR1M Datasets. (c) 10 types of airplanes in GF dataset.
+					</p>				
+					</div>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+				<p class="text" style="text-align:justify;">
+					The above two problems interrelate and influence each other. Slight inter-class discrepancy poses significant challenges to the feature learning process of detectors. The unbalanced class distribution makes it harder for the training process to provide sufficient data for feature learning of novel classes, thus severely degrading the detection performance. Hence, the two problems cannot be treated independently but should be seen as a whole.<br>
+					To address the aforementioned problems, we propose a novel Instance Switching-based Contrastive Learning (ISCL) method including a Serial Head (SH), a Contrastive Learning-based Module (CLM), refined Instance Switching (ReIS), and fine-grained attributes assisted GF-RarePlanes Dataset (GRD) to progressively and selectively switch instances that are easily misclassified and optimize the feature space distribution accordingly.
+					Our contributions are four-folds:
+					<ul style="font-weight:normal; text-align:justify;">
+							<li> We propose CLM to mitigate the problem of slight inter-class discrepancy by optimizing the feature space distribution with InfoNCE<sup>+</sup> loss, which is built on a serial head with a cascaded form. </li>
+							<li> We introduce the ReIS module to alleviate the class imbalance problem by augmenting novel instances. Besides, a cross-shaped Gaussian kernel that fits the shape of airplanes is designed to alleviate background inconsistency while switching. </li>
+							<li> We design an optimization strategy based on CLM and ReIS, dubbed ISCL, to combine the abilities of expanding inter-class distance and augmenting instances, which achieves an considerable lift on the performance of fine-grained airplane detection. </li>
+							<li> We contribute a fine-grained attribute-assisted dataset GRD in facilitating the detector with the ability to learn subtle differences among classes. By pretraining on GRD, the detection accuracy of classes holding slight discrepancy with others has greatly improved. </li>
+					</ul>
+
+				</p>
+				</td>
+			</tr>
+<!--      <tr>-->
+<!--				<td>-->
+<!--						<h2 class="add-top-margin">AI-TOD-v2</h2>-->
+<!--						<hr>-->
+<!--				</td>-->
+<!--	  </tr>-->
+<!--      <tr>-->
+<!--        <td>-->
+<!--            <h3 class="add-top-margin">Statistics</h3>-->
+<!--            -->
+<!--        </td>-->
+<!--    </tr>-->
+
+<!--    <tr>-->
+<!--      <td>-->
+<!--        <div>-->
+<!--        <img class="center" src="images/statistics.PNG" width="1000" /> <br>-->
+<!--        <p class="image-caption">-->
+<!--          Figure 2. Statistics of classes and instances in AI-TOD-v2. (a) Histogram of the number of instances per class. (b) Histogram of number of instances per image. (c) Histogram of number of instances’ sizes. (d) Boxplot depicting the range of sizes for each object category.-->
+<!--        </p>				-->
+<!--        </div>-->
+<!--      </td>-->
+<!--    </tr>-->
+
+<!--	<tr>-->
+<!--		<td>-->
+<!--		  <div>-->
+<!--		  <img class="center" src="images/mean.PNG" width="500" /> <br>-->
+<!--		  <p class="image-caption">-->
+<!--			Table 1. Mean and standard deviation of object scale on different-->
+<!--			datasets.-->
+<!--		  </p>				-->
+<!--		  </div>-->
+<!--		</td>-->
+<!--	  </tr>-->
+
+<!--	  <tr>-->
+<!--        <td>-->
+<!--            <h3 class="add-top-margin">Download</h3>-->
+<!--            1. AI-TOD-->
+<!--			[<a href="https://drive.google.com/drive/folders/1mokzFtLCjyqalSEajYTUmyzXvOHAa4WX" style="color: #0088CC">images & annotations</a>]<br>-->
+<!--			2. AI-TOD-v2-->
+<!--			[<a href="https://drive.google.com/drive/folders/1mokzFtLCjyqalSEajYTUmyzXvOHAa4WX" style="color: #0088CC">images & annotations</a>]<br>-->
+<!--			Note that the AI-TOD and AI-TOD-v2 share the image sets.-->
+<!--        </td>-->
+<!--     </tr>-->
+
+			<tr>
+				<td>
+						<h2 class="add-top-margin">Experimental Results</h2>
+						<hr>
+				</td>
+			</tr>
+
+			<tr>
+					<td>
+							<h3 class="add-top-margin">A Comparison of Different Methods on GF and FAIR1M datasets</h3>
+							
+					</td>
+			</tr>
+					
+			<tr>
+				<td>
+					<div>
+					<img class="center" src="images/hbb_vis.png" width="1000" /> <br>
+					<p class="image-caption">
+						Figure 2. Visualization of the HBB detection results on both the GF dataset (the first row) and the FAIR1M dataset (the second row). Each column from left to right separately demonstrates the detection performance of FasterR-CNN, Cascade R-CNN, DetectoRS, and the Faster R-CNN added with our ISCL method. The green, yellow, and red boxes respectively indicate true positive (TP), false positive (FP), and false negative (FN) predictions.
+					</p>				
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<div>
+					<img class="center" src="images/obb_vis.png" width="1000" /> <br>
+					<p class="image-caption">
+						Figure 3. Visualization of the OBB detection results on \textbf{GF} dataset, using baseline detectors (the first row) and the baseline detectors added with our proposed ISCL (the second row). The green, yellow, and red boxes respectively indicate true positive (TP), false positive (FP), and false negative (FN) predictions. The superscript <sup>*</sup> indicates simply adding ReIS module to S2A-Net due to the non-transferability of ISCL to one-stage detectors.
+					</p>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<div>
+					<img class="center" src="images/gf_table.png" width="1000" /> <br>
+					<p class="image-caption">
+						Table 1. Detection results on GF dataset.
+					</p>
+					</div>
+				</td>
+			</tr>
+
+<!--			<tr>-->
+<!--				<td>-->
+<!--						<h2 class="add-top-margin">Related Work</h2>-->
+<!--						<hr>-->
+<!--						<p class="text" style="text-align:justify;"></p>-->
+<!--						Our work is built based on our past works including: <a href="https://ieeexplore.ieee.org/abstract/document/9413340" style="color: #0088CC">AI-TOD</a> [1], <a href="https://arxiv.org/abs/2102.12219" style="color: #0088CC">DOTA-v2.0</a> [3], <a href="https://openaccess.thecvf.com/content/CVPR2021W/EarthVision/html/Xu_Dot_Distance_for_Tiny_Object_Detection_in_Aerial_Images_CVPRW_2021_paper.html" style="color: #0088CC">DotD</a> [4] and <a href="https://arxiv.org/abs/2110.13389" style="color: #0088CC">NWD</a> [5]. If you found our work helpful, consider citing these works as well.-->
+<!--				</td>-->
+<!--			</tr>-->
+			<tr>
+					<td>
+							<h2 class="add-top-margin">Acknowledgements</h2>
+							<hr>
+							<p class="text" style="text-align:justify;"></p>
+						We would like to thank the anonymous reviewers for their valuable comments and contributions. The numerical calculations in this article have been done on the supercomputing system in the Supercomputing Center, Wuhan University.
+							
+					</td>
+			</tr>
+
+			<tr>
+					<td colspan="2">
+					<h2 class="add-top-margin">References</h2>
+					<hr>
+					<ol style="padding-inline-start:20px;">
+						<li>
+							<b>Accurate Bridge Detection in Aerial Images With an Auxiliary Waterbody Extraction Task </b>
+							[<a href="https://ieeexplore.ieee.org/abstract/document/9540370" style="color: #0088CC">paper</a>]<br>
+								H. Guo, R. Zhang, Y. Wang, W. Yang, H.-C. Li, G.-S. Xia <br>
+								IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (<b>JSTARS</b>), 2021.
+						</li>
+
+						<li>
+							<b>Redet: A rotation-equivariant detector for aerial object detection</b>
+							[<a href="https://openaccess.thecvf.com/content/CVPR2021W/EarthVision/html/Xu_Dot_Distance_for_Tiny_Object_Detection_in_Aerial_Images_CVPRW_2021_paper.html" style="color: #0088CC">paper</a>]<br>
+							J. Han, J. Ding, N. Xue, G.-S. Xia <br>
+							IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2021.
+						</li>
+
+						<li>
+							<b>Detecting tiny objects in aerial images: A normalized Wasserstein distance and a new benchmark</b>
+							[<a href="https://www.sciencedirect.com/science/article/abs/pii/S0924271622001599" style="color: #0088CC">paper</a>]<br>
+							C. Xu, J. Wang, W. Yang, H. Yu, L. Yu, G.-S. Xia <br>
+							International Society for Photogrammetry and Remote Sensing (<b>ISPRS</b>), 2022.
+						</li>
+
+						<li>
+							<b>MMDetection: Open MMLab Detection Toolbox and Benchmark </b>
+							[<a href="https://arxiv.org/abs/1906.07155" style="color: #0088CC">paper</a>]<br>
+							   K. Chen, J. Wang, J. Pang, et al. <br>
+							   <b>arxiv</b>, 2019.
+						</li>
+
+						<li>
+							<b>MMRotate: A Rotated Object Detection Benchmark using PyTorch </b>
+							[<a href="https://arxiv.org/abs/2204.13317" style="color: #0088CC">paper</a>]<br>
+							   Y. Zhou, X. Yang, G. Zhang, J. Wang, Y. Liu, et al. <br>
+							   <b>arxiv</b>, 2022.
+						</li>
+
+						
+
+					</ol>
+					</td>
+				</tr>
+				
+					
+			<br><br>
+		 </table>
+		 			
+		
+	<div class="footer">
+		<p class="block">&copy; 2022 by Lanxin Zeng at SPL</p>
+	</div>
+
+	</div>
+</div>
+</body>
+</html>
