@@ -2,7 +2,7 @@
 <html>
 <head>
 
-	<title>ISCL</title>
+	<title>CMPC</title>
 	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
 	<link href="css/main.css" media="screen" rel="stylesheet" type="text/css"/>
 	<link href="css/index.css" media="screen" rel="stylesheet" type="text/css"/>
@@ -29,13 +29,13 @@
 			<tr>
 				<td>
 					<div class="logo">
-						<a href="javascript:void(0)">ISCL</a>
+						<a href="javascript:void(0)">CMPC</a>
 					</div>
 				</td>
 				<td>
 					<div class="menu-items">
 						<a class="menu-highlight">Overview</a>
-						<a href="https://github.com/Lanxin1011/ISCL">GitHub</a>
+						<a href="https://github.com/Collebt/CMPC">GitHub</a>
 					</div>
 				</td>
 			</tr>
@@ -43,30 +43,32 @@
 	</div>
 </div>
 
+
 <div class="content-container">
 	<div class="content">
 		<table class="content-table">
 		      <h1 style="text-align:center; margin-top:60px; font-weight: bold; font-size: 35px;">
-				Instance Switching-based Contrastive Learning for Fine-grained Airplane Detection </h1>
+				Learning to Find the Optimal Correspondence between SAR and Optical Image Patches </h1>
 	        
 				<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px;">
-					<a href="https://github.com/Lanxin1011" style="color: #0088CC">Lanxin Zeng<script type="math/tex">^1</script>, </a>
-					<a href="https://github.com/whughw" style="color: #0088CC">Haowen Guo<script type="math/tex">^1</script>, </a>
+					<a href="https://github.com/Collebt" style="color: #0088CC">Haoyuan Li<script type="math/tex">^1</script>, </a>
+					<a href="https://github.com/xufangchn" style="color: #0088CC">Fang Xu<script type="math/tex">^1</script>, </a>
 					<a href="http://www.captain-whu.com/yangwen_En.html" style="color: #0088CC">Wen Yang<script type="math/tex">^{1,*}</script>, </a>
-          <a href="https://github.com/levenberg" style="color: #0088CC">Huai Yu<script type="math/tex">^1</script>,</a>
-          <a href="http://dvs-whu.cn/" style="color: #0088CC">Lei Yu<script type="math/tex">^1</script>,</a> 
-					<a href="https://www.cast.cn/" style="color: #0088CC">Peng Zhang<script type="math/tex">^{2}</script>, </a> 
-					<a href="https://www.cast.cn/" style="color: #0088CC">Tongyuan Zou<script type="math/tex">^{2}</script> </a> <br>
-
-                     
+					<a href="https://sites.google.com/view/yumingxiang/" style="color: #0088CC">Yuming Xiang<script type="math/tex">^{2}</script>, </a> 
+          			<a href="https://github.com/levenberg" style="color: #0088CC">Huai Yu<script type="math/tex">^1</script>,</a>
+					<a href="https://www.researchgate.net/profile/Haijian-Zhang" style="color: #0088CC">Haijian Zhang,<script type="math/tex">^1</script>,</a>
+					<a href="http://www.captain-whu.com/xia_En.html" style="color: #0088CC">Gui-Song Xia<script type="math/tex">^1</script>,</a>
+				</p>	
+				<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px;">
 					<a target="_blank" href="https://dsp.whu.edu.cn/" style="color: #0088CC; font-style: italic"><script type="math/tex">^1</script>EIS SPL, Wuhan University, Wuhan, China</a><br>
-					<a target="_blank" href="https://www.cast.cn/" style="color: #0088CC; font-style: italic"><script type="math/tex">^2</script>503 Institute, China Academy of Space Technology, Beijing, China</a>  <br>
+				</p> 
 
-				</p>	 
 				<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px;"> 
-					<a href="https://ieeexplore.ieee.org/document/9933796" style="color: hsl(17, 100%, 40%)"> [Paper]
+					<a  style="color: hsl(17, 100%, 40%);margin-left: 30px;"> [Paper-Coming Soon]
 					</a>
-					<a href="https://github.com/Lanxin1011/mmdet-ISCL" style="color: hsl(17, 100%, 40%)"> [Data and code]
+					<a  style="color: hsl(17, 100%, 40%);margin-left: 30px"> [Code-Coming Soon]
+					</a>
+					<a  style="color: hsl(17, 100%, 40%);margin-left: 30px"> [Data-Coming Soon]
 					</a>
 				</p>
 		
@@ -81,7 +83,7 @@
 					<!-- <td colspan="1"> -->
 
 				<p class="text" style="text-align:justify;">
-					Detecting airplanes from high-resolution remote sensing images has a variety of applications. The characteristics of clear details, rich spatial, and texture information of objects in high-resolution remote sensing images make it possible to identify different types of airplanes from backgrounds. However, airplanes usually exhibit slight interclass discrepancy and unbalanced class distribution, which pose significant challenges to the fine-grained detection of airplanes. In this article, we propose the ISCL, an instance switching-based contrastive learning method for fine-grained airplane detection. Specifically, we introduce a contrastive learning-based module (CLM) to widen the interclass distance while narrowing the intraclass distance by optimizing feature space distribution with the InfoNCE<sup>+</sup> loss, which is built on a serial head in a cascaded way. Then, we design a refined instance switching (ReIS) module to alleviate the class imbalance problem. To take full advantage of the CLM and ReIS, we further introduce an optimization strategy, which is an organic combination of the two modules to widen the distances of different airplane categories that are easily confused. In addition, we contribute a fine-grained attribute-assisted dataset, dubbed GF-RarePlanes dataset (GRD), to help the detectors better learn the subtle differences between the airplanes. Extensive experiments on two datasets (<i>i.e.</i>, GF and FAIR1M) demonstrate that our proposed method can significantly improve the accuracy of fine-grained airplane detection under both horizontal bounding box (HBB) and oriented bounding box (OBB) scenarios. Dataset and codes will be available at https://lanxin1011.github.io/ISCL/.
+					This study addresses the problem of finding the optimal correspondence for a given synthetic aperture radar (SAR) image patch from a large collection of optical reference patches, which is crucial for various applications, including remote sensing, place recognition, and aircraft navigation. However, achieving one-to-one SAR-Optical Patch Correspondence is challenging due to the distinct modal discrepancy and the poor discriminability of the target instances.  To address these challenges, we propose a Cross-Modal Patch Correspondence (CMPC) scheme that consists of two modules: a retrieval-based coarse search module and a correspondence refinement module. Specifically, to explicitly represent the modal discrepancy,  we first introduce a cross-modal adversarial learning strategy in the coarse search module and learn the modal-invariant feature embedding for retrieval. Furthermore, to improve the instance discriminability of retrieved candidates, we propose a graph representation in the refinement module to integrate the visual and spatial information, which is finally fed to an attention graph network to estimate the optimal correspondence.To evaluate the effectiveness of the proposed scheme, we also propose three new SAR-Optical patch correspondence datasets. Comprehensive experiments show that our approach significantly outperforms the competitors on all three datasets.
 				</p>
 					<!-- </td> -->
 			</tr>
@@ -95,87 +97,103 @@
 
 			<tr>
 				<p class="text" style="text-align:justify;">
-					detection has attracted attention from a wide range of communities in recent years. As one of the branches of object detection, airplane detection is of great importance to flight monitoring at the airport with high resolution remote sensing images. The characteristics of rich spatial information and clear texture details allow the object detectors to distinguish airplanes from backgrounds in traditional detection tasks. However, as shown in Fig.1-(a), CNN-based detectors still find it hard to accurately classify airplanes in the task of fine-grained airplane detection due to the following issues:
+					Visual localization is an important application of remote sensing, place recognition, and aircraft navigation, which is achieved by estimating the correspondence of the query and reference database images. This task is typically addressed as an image retrieval problem based on visual similarity. While existing image-based retrieval methods have shown promising performance in scenarios where images are captured using optical cameras, they heavily rely on the assumption that optical images can always reliably capture the necessary information. However, this assumption may not hold true in challenging conditions such as low-light environments or adverse weather conditions. Hence, it becomes imperative to explore alternative and more robust information sources that can facilitate stable image correspondence even in such challenging scenarios.Concretely, two challenges of this task are listed below:
           <br>
           <br>
-					<b>Unbalanced Class Distribution.</b> Airplanes of different classes exist at different frequencies in the real world, and thus airplane datasets (i.e., GF and FAIR1M) usually exhibit unbalanced inter-class distribution as shown in Fig.1-(b). A study found that ConvNet would significantly overfit the minor class who has insufficient training instances, resulting in poor detection accuracy. Hence, designing an appropriate augmenting method to improve minor class instance diversity and construct a balanced dataset is non-trivial.
-					<b>Indistinct Inter-class Discrepancy.</b> Similar to the challenge in fine-grained classification, airplanes of different classes exhibit slight inter-class discrepancy as shown in Fig.1-(c). Meanwhile, due to the different coating of the same type of airplanes, the geometric distortion of remote sensing images and other factors, airplanes of the same class appear to have large intra-class difference as well. Thus, CNN-based detectors cannot learn distinguishable features to correctly classify airplanes, which leads to performance degradation on fine-grained detection tasks.
+					<b>Poor instance discriminability.</b> The patch correspondence requires the optimal matching between the query and only one target. However, similar visual features lack instance discriminability, posing the challenge of identifying the best correspondence from the retrieved candidates, as shown in query1 of Fig.1. This limitation can lead to inaccurate and unreliable results in scenarios where the retrieved candidates have a high degree of similarity. <br>
+					<b>Distinct feature distribution.</b> The fundamental differences in the imaging principles of SAR and optical modalities lead to variations in the appearance and structure of the same object in the two modalities, which makes it difficult to find a common representation for cross-modal features. As shown in query2 of Fig.1, the negative sample is more similar than the true positive in embedding space due to the distinct feature distributions. 
+					It poses a challenge for learning-based methods that rely on the feature distribution metric. 
+					Overcoming this challenge requires the development of techniques that can efficiently model and bridge the feature distribution gap between these SAR and optical images.
 				</p>
 			</tr>
 
 			<tr>
 				<td>
-					<div>
-					<img class="center" src="./images/fig1.png" width="600" /> <br>
-					<p class="image-caption">
-						Figure 1. (a) Detection results of Faster R-CNN. (b) Sample Distribution of the training set in GF and FAIR1M Datasets. (c) 10 types of airplanes in GF dataset.
-					</p>				
+					<div class="app">
+					<div style="display:inline-block;margin-left:100px">
+						<img src="./img/challenge.png" width="450" /> <br>
+						<p class="image-caption">Fig.1. The challenges of cross-modal patch correspondence task.</p>
+					</div>			
+					<div style="display:inline-block;margin-left:100px;">
+						<img src="./img/frame_new3.png" width="400" />  <br>
+						<p class="image-caption">Fig.2. Workflow of cross-modal remote sensing patch correspondence. </p>
 					</div>
+					
+					</div>
+					
 				</td>
 			</tr>
 			
 			<tr>
 				<td>
 				<p class="text" style="text-align:justify;">
-					The above two problems interrelate and influence each other. Slight inter-class discrepancy poses significant challenges to the feature learning process of detectors. The unbalanced class distribution makes it harder for the training process to provide sufficient data for feature learning of novel classes, thus severely degrading the detection performance. Hence, the two problems cannot be treated independently but should be seen as a whole.<br>
-					To address the aforementioned problems, we propose a novel Instance Switching-based Contrastive Learning (ISCL) method including a Serial Head (SH), a Contrastive Learning-based Module (CLM), refined Instance Switching (ReIS), and fine-grained attributes assisted GF-RarePlanes Dataset (GRD) to progressively and selectively switch instances that are easily misclassified and optimize the feature space distribution accordingly.
+					We propose a Coarse-to-Fine correspondence scheme (Fig.2) to explore the feasibility of instance-level cross-modal patch correspondence. The proposed scheme comprises a cross-modal coarse search module and a refinement module. The coarse search module adopts adversarial learning to narrow the modal gap and extract modal-invariant features to retrieve the candidates. The refinement module turns the embedding features and the candidates' GPS information into a graph representation, and then selects the optimal correspondence by updating the graph via an attention message propagation. To evaluate the performance of our proposed scheme, we also construct three SAR-Optical patch correspondence datasets.
 					Our contributions are four-folds:
 					<ul style="font-weight:normal; text-align:justify;">
-							<li> We propose CLM to mitigate the problem of slight inter-class discrepancy by optimizing the feature space distribution with InfoNCE<sup>+</sup> loss, which is built on a serial head with a cascaded form. </li>
-							<li> We introduce the ReIS module to alleviate the class imbalance problem by augmenting novel instances. Besides, a cross-shaped Gaussian kernel that fits the shape of airplanes is designed to alleviate background inconsistency while switching. </li>
-							<li> We design an optimization strategy based on CLM and ReIS, dubbed ISCL, to combine the abilities of expanding inter-class distance and augmenting instances, which achieves an considerable lift on the performance of fine-grained airplane detection. </li>
-							<li> We contribute a fine-grained attribute-assisted dataset GRD in facilitating the detector with the ability to learn subtle differences among classes. By pretraining on GRD, the detection accuracy of classes holding slight discrepancy with others has greatly improved. </li>
+							<li> We introduce a Coarse-to-Fine scheme for SAR-Optical remote sensing cross-modal patch correspondence (CMPC) to find the optimal correspondence between SAR and optical images. </li>
+							<li> We explicitly model the cross-modal feature distribution as Wasserstein distance and propose a cross-modal adversarial learning strategy to learn the modal-invariant feature.</li>
+							<li> We propose a graph representation that incorporates the visual feature and spatial information to improve the discriminability of the retrieved candidates and refine the coarse retrieval to optimal correspondence.  </li>
+							<li>
+							We construct three datasets to evaluate various methods' feasibility of on the cross-modal patch correspondence task and even the localization applications. Our proposed scheme achieves state-of-the-art results on these proposed datasets.
+							</li>
+
 					</ul>
 
 				</p>
 				</td>
 			</tr>
-<!--      <tr>-->
-<!--				<td>-->
-<!--						<h2 class="add-top-margin">AI-TOD-v2</h2>-->
-<!--						<hr>-->
-<!--				</td>-->
-<!--	  </tr>-->
-<!--      <tr>-->
-<!--        <td>-->
-<!--            <h3 class="add-top-margin">Statistics</h3>-->
-<!--            -->
-<!--        </td>-->
-<!--    </tr>-->
 
-<!--    <tr>-->
-<!--      <td>-->
-<!--        <div>-->
-<!--        <img class="center" src="images/statistics.PNG" width="1000" /> <br>-->
-<!--        <p class="image-caption">-->
-<!--          Figure 2. Statistics of classes and instances in AI-TOD-v2. (a) Histogram of the number of instances per class. (b) Histogram of number of instances per image. (c) Histogram of number of instances’ sizes. (d) Boxplot depicting the range of sizes for each object category.-->
-<!--        </p>				-->
-<!--        </div>-->
-<!--      </td>-->
-<!--    </tr>-->
+			<!-- ---------------------------------------DATASET --------------->
 
-<!--	<tr>-->
-<!--		<td>-->
-<!--		  <div>-->
-<!--		  <img class="center" src="images/mean.PNG" width="500" /> <br>-->
-<!--		  <p class="image-caption">-->
-<!--			Table 1. Mean and standard deviation of object scale on different-->
-<!--			datasets.-->
-<!--		  </p>				-->
-<!--		  </div>-->
-<!--		</td>-->
-<!--	  </tr>-->
+			<tr>
+				<td>
+						<h2 class="add-top-margin">Dataset</h2>
+						<hr>
+				</td>
+			</tr>
 
-<!--	  <tr>-->
-<!--        <td>-->
-<!--            <h3 class="add-top-margin">Download</h3>-->
-<!--            1. AI-TOD-->
-<!--			[<a href="https://drive.google.com/drive/folders/1mokzFtLCjyqalSEajYTUmyzXvOHAa4WX" style="color: #0088CC">images & annotations</a>]<br>-->
-<!--			2. AI-TOD-v2-->
-<!--			[<a href="https://drive.google.com/drive/folders/1mokzFtLCjyqalSEajYTUmyzXvOHAa4WX" style="color: #0088CC">images & annotations</a>]<br>-->
-<!--			Note that the AI-TOD and AI-TOD-v2 share the image sets.-->
-<!--        </td>-->
-<!--     </tr>-->
+			<tr>
+					<td>
+							<h3 class="add-top-margin">Optical-SAR Patch Correspondence Datasets</h3>
+							
+					</td>
+			</tr>
+					
+			<tr>
+				<td>
+					<div style="display:inline-block;margin-left:20px">
+						<img src="img/data_a.png" height="250" />  <br>
+					</div>			
+					<div style="display:inline-block;margin-left:20px;">
+						<img src="img/data_b.png" height="250"/><br>
+					</div>
+					<div style="display:inline-block;margin-left:20px;">
+						<img src="img/data_c.png" height="250" /><br>
+					</div>
+					<div style="display:inline-block;margin-left:20px;">
+						<img src="img/data_d.png" height="252" /><br>
+					</div>
+
+					<div style="display:inline-block;margin-left:30px">
+						<p class="image-caption;">(a) The top shows a SAR strip sample <br> over city.</p>
+					</div>			
+					<div style="display:inline-block;margin-left:30px;">
+						<p class="image-caption">(b) The cross-area region setting.</p>
+					</div>
+					<div style="display:inline-block;margin-left:30px;">
+						<p class="image-caption">(c) The gridded optical patches.</p>
+					</div>
+					<div style="display:inline-block;margin-left:0px;">
+						<p class="image-caption">(d) Aligned vs. Non-aligned SAR-ptical patch pairs.</p>
+					</div>
+				
+					<p class="image-caption">
+						The sampling strategy of the proposed datasets. (a) shows the SAR and optical image data. (b) shows the non-overlap region protocol for the training set and the test set. (c) shows the cropping strategy of optical patches. (d) shows the patch correspondence definitions.
+					</p>				
+				</td>
+			</tr>
+
+<!-- ---------------------------------------EXPERIMENTS --------------->
 
 			<tr>
 				<td>
@@ -186,7 +204,7 @@
 
 			<tr>
 					<td>
-							<h3 class="add-top-margin">A Comparison of Different Methods on GF and FAIR1M datasets</h3>
+							<h3 class="add-top-margin">A Comparison of Different Methods on CMPC Dataset</h3>
 							
 					</td>
 			</tr>
@@ -194,44 +212,16 @@
 			<tr>
 				<td>
 					<div>
-					<img class="center" src="images/hbb_vis.png" width="1000" /> <br>
+					<img class="center" src="img/well_vis5.png" width="1000" /> <br>
 					<p class="image-caption">
-						Figure 2. Visualization of the HBB detection results on both the GF dataset (the first row) and the FAIR1M dataset (the second row). Each column from left to right separately demonstrates the detection performance of FasterR-CNN, Cascade R-CNN, DetectoRS, and the Faster R-CNN added with our ISCL method. The green, yellow, and red boxes respectively indicate true positive (TP), false positive (FP), and false negative (FN) predictions.
+						The visualization of the retrieval result on the Same-area Dataset. The patches with green boxes are real matches, while the yellow boxes are neighbors
+						with region overlaps. The numbers under patches are the location distance between the query and the retrieved optical patches.
 					</p>				
 					</div>
 				</td>
 			</tr>
 
-			<tr>
-				<td>
-					<div>
-					<img class="center" src="images/obb_vis.png" width="1000" /> <br>
-					<p class="image-caption">
-						Figure 3. Visualization of the OBB detection results on \textbf{GF} dataset, using baseline detectors (the first row) and the baseline detectors added with our proposed ISCL (the second row). The green, yellow, and red boxes respectively indicate true positive (TP), false positive (FP), and false negative (FN) predictions. The superscript <sup>*</sup> indicates simply adding ReIS module to S2A-Net due to the non-transferability of ISCL to one-stage detectors.
-					</p>
-					</div>
-				</td>
-			</tr>
 
-			<tr>
-				<td>
-					<div>
-					<img class="center" src="images/gf_table.png" width="1000" /> <br>
-					<p class="image-caption">
-						Table 1. Detection results on GF dataset.
-					</p>
-					</div>
-				</td>
-			</tr>
-
-<!--			<tr>-->
-<!--				<td>-->
-<!--						<h2 class="add-top-margin">Related Work</h2>-->
-<!--						<hr>-->
-<!--						<p class="text" style="text-align:justify;"></p>-->
-<!--						Our work is built based on our past works including: <a href="https://ieeexplore.ieee.org/abstract/document/9413340" style="color: #0088CC">AI-TOD</a> [1], <a href="https://arxiv.org/abs/2102.12219" style="color: #0088CC">DOTA-v2.0</a> [3], <a href="https://openaccess.thecvf.com/content/CVPR2021W/EarthVision/html/Xu_Dot_Distance_for_Tiny_Object_Detection_in_Aerial_Images_CVPRW_2021_paper.html" style="color: #0088CC">DotD</a> [4] and <a href="https://arxiv.org/abs/2110.13389" style="color: #0088CC">NWD</a> [5]. If you found our work helpful, consider citing these works as well.-->
-<!--				</td>-->
-<!--			</tr>-->
 			<tr>
 					<td>
 							<h2 class="add-top-margin">Acknowledgements</h2>
@@ -242,59 +232,12 @@
 					</td>
 			</tr>
 
-			<tr>
-					<td colspan="2">
-					<h2 class="add-top-margin">References</h2>
-					<hr>
-					<ol style="padding-inline-start:20px;">
-						<li>
-							<b>Accurate Bridge Detection in Aerial Images With an Auxiliary Waterbody Extraction Task </b>
-							[<a href="https://ieeexplore.ieee.org/abstract/document/9540370" style="color: #0088CC">paper</a>]<br>
-								H. Guo, R. Zhang, Y. Wang, W. Yang, H.-C. Li, G.-S. Xia <br>
-								IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing (<b>JSTARS</b>), 2021.
-						</li>
-
-						<li>
-							<b>Redet: A rotation-equivariant detector for aerial object detection</b>
-							[<a href="https://openaccess.thecvf.com/content/CVPR2021W/EarthVision/html/Xu_Dot_Distance_for_Tiny_Object_Detection_in_Aerial_Images_CVPRW_2021_paper.html" style="color: #0088CC">paper</a>]<br>
-							J. Han, J. Ding, N. Xue, G.-S. Xia <br>
-							IEEE Conference on Computer Vision and Pattern Recognition (<b>CVPR</b>), 2021.
-						</li>
-
-						<li>
-							<b>Detecting tiny objects in aerial images: A normalized Wasserstein distance and a new benchmark</b>
-							[<a href="https://www.sciencedirect.com/science/article/abs/pii/S0924271622001599" style="color: #0088CC">paper</a>]<br>
-							C. Xu, J. Wang, W. Yang, H. Yu, L. Yu, G.-S. Xia <br>
-							International Society for Photogrammetry and Remote Sensing (<b>ISPRS</b>), 2022.
-						</li>
-
-						<li>
-							<b>MMDetection: Open MMLab Detection Toolbox and Benchmark </b>
-							[<a href="https://arxiv.org/abs/1906.07155" style="color: #0088CC">paper</a>]<br>
-							   K. Chen, J. Wang, J. Pang, et al. <br>
-							   <b>arxiv</b>, 2019.
-						</li>
-
-						<li>
-							<b>MMRotate: A Rotated Object Detection Benchmark using PyTorch </b>
-							[<a href="https://arxiv.org/abs/2204.13317" style="color: #0088CC">paper</a>]<br>
-							   Y. Zhou, X. Yang, G. Zhang, J. Wang, Y. Liu, et al. <br>
-							   <b>arxiv</b>, 2022.
-						</li>
-
-						
-
-					</ol>
-					</td>
-				</tr>
-				
-					
 			<br><br>
 		 </table>
 		 			
 		
 	<div class="footer">
-		<p class="block">&copy; 2022 by Lanxin Zeng at SPL</p>
+		<p class="block">&copy; 2023 by Haoyuan Li at SPL</p>
 	</div>
 
 	</div>
