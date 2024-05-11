@@ -2,7 +2,7 @@
 
 
 ## Project Page
-[CMPC](hhttps://Collebt.github.io/CMPC/)
+See it from [CMPC](hhttps://Collebt.github.io/CMPC/)
 
 ## Overview
 We design a cross-modal visual geo-localization framework to prdict the accurate location of SAR patch from satellite database with cross-modal feature embedding and scene-graph modules.
