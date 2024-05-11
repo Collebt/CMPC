@@ -1,0 +1,73 @@
+{   "train_dataset": "GNN_PostTrainDataset",
+    "test_dataset": "SN6LocTestData",
+    "data_path": "data/SN6-CMPC/samearea",
+    "result_path": "results/same_gnn_post/" ,
+    "param_path": "data/SN6-CMPC/samearea/pretrain_embed.t",
+    "emb_feat_path": "results/e2e",
+    "emb_feat": "embed_feats",
+
+    "lr": 0.0025,
+    "lr_mlp": 0.025,
+
+    "optim" :"sgd" ,
+    "arch": "resnet50" ,
+    
+    "model": "embed_GNN",
+    "loss": ["Graph_cls_loss", "Graph_sim_mining_loss"],
+
+    
+    "save_epoch" :10, 
+    "warm_epoch": 0,
+    
+    "workers" :0, 
+    "feat_dim": 2048,
+    "low_dim": 512, 
+    "img_w": 200, 
+    "img_h": 200, 
+    "batch_size" :28, 
+    "test_batch": 28, 
+    "drop": 0.5, 
+    "trial" : 1, 
+
+    "mode" :"all", 
+    "per_img": 1 , 
+    "thd" :0, 
+    "epochs": 60, 
+     
+    "specify_num": 0,
+    "self_mode": false,
+    "pos_eval": true,
+    
+
+    "tri_in": "out_vec",
+    
+    "lambda_cls": 0.001,
+    "lr_d": 0.002,
+    "D_epoch": 5,
+    "D_input": "out_feat",
+
+    "refine_eval": true,
+    "gnn_loss_weight":1,
+    "graph_model": "ATEM", 
+    "graph_in":"out_feat",
+    "graphedge_sigma":0.0005,
+    "node_topk": 20,
+    "edge_topk": 5,
+    "gnn_drop": 0.5,
+    "gnn_softmax": false,
+    "gnn_detach": true,
+    "node_func": "cat",
+    "net_channels":2048,
+    "encode_pos": false,
+    "edge_weight":false,
+    "KNN_inner" : true,
+    "pos_mlp": [2, 192 ,384, 2048],
+    "end2end": false,
+    "shortcut": false,
+
+    "transform_train_base": 
+        ["RandomCrop200", "RandomHorizontalFlip", "ToTensor", "normalize"],
+    "transform_test": 
+        ["Resize200", "ToTensor", "normalize"]
+
+}

@@ -1,0 +1,61 @@
+{   "train_dataset": "SN6LocMultiAlignData",
+    "test_dataset": "SN6LocTestData",
+    "data_path": "data/SN6-CMPC/samearea",
+    "result_path": "results/same_xmod/" ,
+    
+
+    "lr": 0.0025,
+    "lr_mlp": 0.025,
+    "lr_fastor": 1,
+
+    "weight_decay": 0.0005,
+    "weight_decay_bias": 0.0005,
+
+    "optim" :"SGD" ,
+    "arch": "resnet50" ,
+    "model": "XmodNet",
+    "pretrain_choice": "imagenet",
+    "model_path" : "data/networks/resnet50-19c8e357.pth",
+    
+    "last_stride": 1,
+    "num_classes": 6238,
+    "neck":"bnneck",
+    
+    "loss": ["Triplet_Loss"],
+
+    "save_epoch" :10, 
+    "warm_epoch": 0,
+
+    "workers" :4, 
+    "feat_dim": 2048,
+    "low_dim": 2048, 
+    "img_w": 200, 
+    "img_h": 200, 
+    "batch_size" :32, 
+    "test_batch": 64, 
+    "drop": 0.5, 
+    "trial" : 1, 
+
+    "mode" :"all", 
+    "per_img": 1 , 
+    "thd" :0, 
+    "epochs": 60, 
+    "dist_type": "l2",
+     
+    "specify_num": 0,
+    "self_mode": false,
+    "pos_eval": true,
+    
+    "tri_in": "out_vec",
+    "cls_lambda": 0.0,
+    
+    "adv_train": false,
+    "refine_eval": false,
+    
+
+    "transform_train_base": 
+        ["RandomCrop200", "RandomHorizontalFlip", "ToTensor", "normalize"],
+    "transform_test": 
+        ["Resize200", "ToTensor", "normalize"]
+
+}

@@ -1,0 +1,62 @@
+{   "train_dataset": "SN6LocMultiAlignData",
+    "test_dataset": "SN6LocTestData",
+    "data_path": "data/SN6-CMPC/samearea",
+    "result_path": "results/same_rk" ,
+
+
+    "model": "rk_two_view_net",
+    "loss": ["Triplet_Loss"],
+    
+    
+    "epochs": 60, 
+    "save_epoch" :10, 
+    "warm_epoch": 0,
+    "workers" :4, 
+    "batch_size" :12, 
+    "test_batch": 64, 
+
+    "lr": 0.0025,
+    "lr_mlp": 0.025,
+    "optim" :"sgd" ,
+
+
+    "name": "RK-Net",
+    "VGG16": false,
+    "views": 2,
+    "stride": 2,
+    "per_img": 1 ,
+    "nclasses": 512,
+    "drop": 0.65,
+    "pool": "avg",
+    "share": false,
+    "arch": "resnet50" ,
+    "specify_num": 5,
+    "low_dim":512,
+
+
+    "img_w": 384,
+    "img_h": 384,
+
+    "color_jitter": false,
+    "erasing_p": 0,
+    "extra_Google": false,
+    "fp16": false,
+    "moving_avg": 1.0,    
+    "train_all": false,
+    "use_NAS": false,
+    "use_dense": false,
+    
+
+    
+    "adv_train": false,
+    "pos_eval": true,
+    "refine_eval":false,
+
+    "tri_in": "out_vec",
+    "self_mode": false,
+
+    "transform_train_base": 
+        ["Resize384", "Pad10", "RandomAffine90", "RandomCrop384", "RandomHorizontalFlip", "ToTensor", "normalize"],
+    "transform_test": 
+        ["Resize384", "ToTensor", "normalize"]
+}

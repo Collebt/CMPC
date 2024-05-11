@@ -1,0 +1,47 @@
+{   "train_dataset": "SN6LocMultiAlignData",
+    "test_dataset": "SN6LocTestData",
+    "data_path": "data/SN6-CMPC/samearea",
+    "result_path": "results/same_DCMHN/" ,
+    
+    "optim" :"Adam" ,
+    "lr": 0.001,
+    "weight_decay": 0.0005,
+    
+
+    "feat_dim": 2048,
+    "low_dim": 512,
+    
+    "arch": "resnet50" ,
+    "model": "DCMHN",
+    "drop": 0.5, 
+
+
+    "loss": ["Triplet_Loss"],
+    "tri_in": "out_vec",
+    "self_mode": false,
+    "beta":0.0,
+    "gamma":0.0,
+
+    "epochs": 60, 
+    "save_epoch" :10, 
+    "warm_epoch": 0,
+
+    "workers" :4, 
+    "per_img": 1 ,
+    "img_w": 200, 
+    "img_h": 200, 
+    "batch_size" :24, 
+    "test_batch": 64, 
+     
+    "adv_train": false,
+    "pos_eval": true,
+    "refine_eval": false,
+    
+    "transform_train_base": 
+        ["RandomCrop200", "RandomHorizontalFlip", "ToTensor", "normalize"],
+    "transform_train_aux": 
+        ["RandomCrop200", "RandomHorizontalFlip","ToTensor","ChannelChoice", "normalize"],
+    "transform_test": 
+        ["Resize200", "ToTensor", "normalize"]
+
+}
