@@ -1,0 +1,252 @@
+<!doctype html>
+<html>
+<head>
+
+	<title>CMPC</title>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+	<link href="css/main.css" media="screen" rel="stylesheet" type="text/css"/>
+	<link href="css/index.css" media="screen" rel="stylesheet" type="text/css"/>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+	<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({
+			CommonHTML: { linebreaks: { automatic: true } },
+			"HTML-CSS": { linebreaks: { automatic: true } },
+				 SVG: { linebreaks: { automatic: true } }
+			});
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+	
+</head>
+
+<body>
+
+<div class="menu-container noselect">
+	<div class="menu">
+		<table class="menu-table">
+			<tr>
+				<td>
+					<div class="logo">
+						<a href="javascript:void(0)">CMPC</a>
+					</div>
+				</td>
+				<td>
+					<div class="menu-items">
+						<a class="menu-highlight">Overview</a>
+						<a href="https://github.com/Collebt/CMPC">GitHub</a>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+<div class="content-container">
+	<div class="content">
+		<table class="content-table">
+		      <h1 style="text-align:center; margin-top:60px; font-weight: bold; font-size: 35px;">
+				Learning to Find the Optimal Correspondence between SAR and Optical Image Patches </h1>
+	        
+				<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px;">
+					<a href="https://github.com/Collebt" style="color: #0088CC">Haoyuan Li<script type="math/tex">^1</script>, </a>
+					<a href="https://github.com/xufangchn" style="color: #0088CC">Fang Xu<script type="math/tex">^1</script>, </a>
+					<a href="http://www.captain-whu.com/yangwen_En.html" style="color: #0088CC">Wen Yang<script type="math/tex">^{1,*}</script>, </a>
+					<a href="https://sites.google.com/view/yumingxiang/" style="color: #0088CC">Yuming Xiang<script type="math/tex">^{2}</script>, </a> 
+          			<a href="https://github.com/levenberg" style="color: #0088CC">Huai Yu<script type="math/tex">^1</script>,</a>
+					<a href="https://www.researchgate.net/profile/Haijian-Zhang" style="color: #0088CC">Haijian Zhang,<script type="math/tex">^1</script>,</a>
+					<a href="http://www.captain-whu.com/xia_En.html" style="color: #0088CC">Gui-Song Xia<script type="math/tex">^3</script>,</a>
+				</p>	
+				<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px;">
+					<a href="https://dsp.whu.edu.cn/" style="color: #000000; font-style: italic"><script type="math/tex">^1</script>EIS SPL, Wuhan University, Wuhan, China</a><br>
+				</p> 
+				<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px;">
+					<a href="http://english.aircas.ac.cn/" style="color: #000000; font-style: italic"><script type="math/tex">^2</script>Aerospace Information Research Institute, Chinese Academy of Sciences, Beijing, China</a><br>
+				</p> 
+				<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px;">
+					<a href="http://www.lmars.whu.edu.cn/enliesmars-at-a-glance/" style="color: #000000; font-style: italic"><script type="math/tex">^3</script>LIESMARS, Wuhan University, Wuhan, China</a><br>
+				</p> 
+
+				<p style="text-align:center; margin-bottom:15px; margin-top:20px; font-size: 18px;"> 
+					<a href="https://ieeexplore.ieee.org/document/10286162" style="color: hsl(17, 100%, 40%);margin-left: 30px;"> [Paper]
+					</a>
+					<a href="https://github.com/Collebt/CMPC_code" style="color: hsl(17, 100%, 40%);margin-left: 30px"> [Code]
+					</a>
+					<a  href="https://drive.google.com/drive/folders/1KXbHCG47QnmvWWBGzroBZdkIy79tDXZp" style="color: hsl(17, 100%, 40%);margin-left: 30px"> [Data]
+					</a>
+				</p>
+		
+			
+			<tr>
+				<!-- <td colspan="1"> -->
+					<h2 class="add-top-margin">Abstract</h2>
+					<hr>
+				<!-- </td> -->
+			</tr>
+			<tr>
+					<!-- <td colspan="1"> -->
+
+				<p class="text" style="text-align:justify;">
+					This study addresses the problem of finding the optimal correspondence for a given synthetic aperture radar (SAR) image patch from a large collection of optical reference patches, which is crucial for various applications, including remote sensing, place recognition, and aircraft navigation. However, achieving one-to-one SAR-Optical Patch Correspondence is challenging due to the distinct modal discrepancy and the poor discriminability of the target instances.  To address these challenges, we propose a Cross-Modal Patch Correspondence (CMPC) scheme that consists of two modules: a retrieval-based coarse search module and a correspondence refinement module. Specifically, to explicitly represent the modal discrepancy,  we first introduce a cross-modal adversarial learning strategy in the coarse search module and learn the modal-invariant feature embedding for retrieval. Furthermore, to improve the instance discriminability of retrieved candidates, we propose a graph representation in the refinement module to integrate the visual and spatial information, which is finally fed to an attention graph network to estimate the optimal correspondence.To evaluate the effectiveness of the proposed scheme, we also propose three new SAR-Optical patch correspondence datasets. Comprehensive experiments show that our approach significantly outperforms the competitors on all three datasets.
+				</p>
+					<!-- </td> -->
+			</tr>
+
+			<tr>
+				<!-- <td colspan="1"> -->
+					<h2 class="add-top-margin">Introduction</h2>
+					<hr>
+				<!-- </td> -->
+			</tr>
+
+			<tr>
+				<p class="text" style="text-align:justify;">
+					Visual localization is an important application of remote sensing, place recognition, and aircraft navigation, which is achieved by estimating the correspondence of the query and reference database images. This task is typically addressed as an image retrieval problem based on visual similarity. While existing image-based retrieval methods have shown promising performance in scenarios where images are captured using optical cameras, they heavily rely on the assumption that optical images can always reliably capture the necessary information. However, this assumption may not hold true in challenging conditions such as low-light environments or adverse weather conditions. Hence, it becomes imperative to explore alternative and more robust information sources that can facilitate stable image correspondence even in such challenging scenarios.Concretely, two challenges of this task are listed below:
+          <br>
+          <br>
+					<b>Poor instance discriminability.</b> The patch correspondence requires the optimal matching between the query and only one target. However, similar visual features lack instance discriminability, posing the challenge of identifying the best correspondence from the retrieved candidates, as shown in query1 of Fig.1. This limitation can lead to inaccurate and unreliable results in scenarios where the retrieved candidates have a high degree of similarity. <br>
+					<b>Distinct feature distribution.</b> The fundamental differences in the imaging principles of SAR and optical modalities lead to variations in the appearance and structure of the same object in the two modalities, which makes it difficult to find a common representation for cross-modal features. As shown in query2 of Fig.1, the negative sample is more similar than the true positive in embedding space due to the distinct feature distributions. 
+					It poses a challenge for learning-based methods that rely on the feature distribution metric. 
+					Overcoming this challenge requires the development of techniques that can efficiently model and bridge the feature distribution gap between these SAR and optical images.
+				</p>
+			</tr>
+
+			<tr>
+				<td>
+					<div class="app">
+					<div style="display:inline-block;margin-left:100px">
+						<img src="./img/challenge.png" width="450" /> <br>
+						<p class="image-caption">Fig.1. The challenges of cross-modal patch correspondence task.</p>
+					</div>			
+					<div style="display:inline-block;margin-left:100px;">
+						<img src="./img/frame_new3.png" width="400" />  <br>
+						<p class="image-caption">Fig.2. Workflow of cross-modal remote sensing patch correspondence. </p>
+					</div>
+					
+					</div>
+					
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+				<p class="text" style="text-align:justify;">
+					We propose a Coarse-to-Fine correspondence scheme (Fig.2) to explore the feasibility of instance-level cross-modal patch correspondence. The proposed scheme comprises a cross-modal coarse search module and a refinement module. The coarse search module adopts adversarial learning to narrow the modal gap and extract modal-invariant features to retrieve the candidates. The refinement module turns the embedding features and the candidates' GPS information into a graph representation, and then selects the optimal correspondence by updating the graph via an attention message propagation. To evaluate the performance of our proposed scheme, we also construct three SAR-Optical patch correspondence datasets.
+					Our contributions are four-folds:
+					<ul style="font-weight:normal; text-align:justify;">
+							<li> We introduce a Coarse-to-Fine scheme for SAR-Optical remote sensing cross-modal patch correspondence (CMPC) to find the optimal correspondence between SAR and optical images. </li>
+							<li> We explicitly model the cross-modal feature distribution as Wasserstein distance and propose a cross-modal adversarial learning strategy to learn the modal-invariant feature.</li>
+							<li> We propose a graph representation that incorporates the visual feature and spatial information to improve the discriminability of the retrieved candidates and refine the coarse retrieval to optimal correspondence.  </li>
+							<li>
+							We construct three datasets to evaluate various methods' feasibility of on the cross-modal patch correspondence task and even the localization applications. Our proposed scheme achieves state-of-the-art results on these proposed datasets.
+							</li>
+
+					</ul>
+
+				</p>
+				</td>
+			</tr>
+
+			<!-- ---------------------------------------DATASET --------------->
+
+			<tr>
+				<td>
+						<h2 class="add-top-margin">Dataset</h2>
+						<hr>
+				</td>
+			</tr>
+
+			<tr>
+					<td>
+							<h3 class="add-top-margin">Optical-SAR Patch Correspondence Datasets</h3>
+							
+					</td>
+			</tr>
+					
+			<tr>
+				<td>
+					<div style="display:inline-block;margin-left:20px">
+						<img src="img/data_a.png" height="250" />  <br>
+					</div>			
+					<div style="display:inline-block;margin-left:20px;">
+						<img src="img/data_b.png" height="250"/><br>
+					</div>
+					<div style="display:inline-block;margin-left:20px;">
+						<img src="img/data_c.png" height="250" /><br>
+					</div>
+					<div style="display:inline-block;margin-left:20px;">
+						<img src="img/data_d.png" height="252" /><br>
+					</div>
+
+					<div style="display:inline-block;margin-left:30px">
+						<p class="image-caption;">(a) The top shows a SAR strip sample <br> over city.</p>
+					</div>			
+					<div style="display:inline-block;margin-left:30px;">
+						<p class="image-caption">(b) The cross-area region setting.</p>
+					</div>
+					<div style="display:inline-block;margin-left:30px;">
+						<p class="image-caption">(c) The gridded optical patches.</p>
+					</div>
+					<div style="display:inline-block;margin-left:0px;">
+						<p class="image-caption">(d) Aligned vs. Non-aligned SAR-ptical patch pairs.</p>
+					</div>
+				
+					<p class="image-caption">
+						The sampling strategy of the proposed datasets. (a) shows the SAR and optical image data. (b) shows the non-overlap region protocol for the training set and the test set. (c) shows the cropping strategy of optical patches. (d) shows the patch correspondence definitions.
+					</p>				
+				</td>
+			</tr>
+
+<!-- ---------------------------------------EXPERIMENTS --------------->
+
+			<tr>
+				<td>
+						<h2 class="add-top-margin">Experimental Results</h2>
+						<hr>
+				</td>
+			</tr>
+
+			<tr>
+					<td>
+							<h3 class="add-top-margin">A Comparison of Different Methods on CMPC Dataset</h3>
+							
+					</td>
+			</tr>
+					
+			<tr>
+				<td>
+					<div>
+					<img class="center" src="img/well_vis5.png" width="1000" /> <br>
+					<p class="image-caption">
+						The visualization of the retrieval result on the Same-area Dataset. The patches with green boxes are real matches, while the yellow boxes are neighbors
+						with region overlaps. The numbers under patches are the location distance between the query and the retrieved optical patches.
+					</p>				
+					</div>
+				</td>
+			</tr>
+
+
+			<tr>
+					<td>
+							<h2 class="add-top-margin">Acknowledgements</h2>
+							<hr>
+							<p class="text" style="text-align:justify;"></p>
+						We would like to thank the anonymous reviewers for their valuable comments and contributions. The numerical calculations in this article have been done on the supercomputing system in the Supercomputing Center, Wuhan University.
+							
+					</td>
+			</tr>
+
+			<br><br>
+		 </table>
+		 			
+		
+	<div class="footer">
+		<p class="block">&copy; 2023 by Haoyuan Li at SPL</p>
+	</div>
+
+	</div>
+</div>
+</body>
+</html>
